@@ -21,3 +21,7 @@
     <li>Connect the out pin to the digital input 2</li>
     <li>Send message of this structure: &lt;name&gt;:&lt;value&gt;:&lt;unit&gt;\n</li>
 </ul>
+
+
+docker pull rabbitmq
+docker run --rm -it --hostname my-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
