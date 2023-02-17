@@ -1,6 +1,5 @@
-from datetime import datetime
 from threading import Thread
-import json
+from .data import Data
 from pubsub import pub
 
 
@@ -12,6 +11,7 @@ class GenerateMessage(Thread):
         self.start()
 
     def run(self):
+        print("Start receiving message form Arduino")
         while True:
             # get the first char from the string and add to the message
             if len(self.queue) > 0:
@@ -20,6 +20,7 @@ class GenerateMessage(Thread):
                     self.queue.pop(0)
                     data = self.message.replace("\r", "").split(":")
 
+                    print("New message arrived from Arduino")
                     self.publish(data)
 
                     # server.send(bytes(json_obj, encoding="utf-8"))
@@ -29,13 +30,5 @@ class GenerateMessage(Thread):
 
     @staticmethod
     def publish(data):
-        json_data = {
-            "date_time": datetime.now().strftime("%d-%m-%Y %H.%M.%S"),
-            "name": data[0],
-            "value": data[1],
-            "unit": data[2]
-        }
-
-        json_obj = json.dumps(json_data, indent=4)
-        pub.sendMessage('message', message=json_obj)
+        pub.sendMessage('message', data=Data(data[0], data[1], data[2]))
 
