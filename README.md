@@ -2,12 +2,11 @@
 <hr>
 <h6>Advanced Weather Station</h6>
 
-<br>
 <h3>Adapter</h3>
 <ul>
     <li>Python 3.11</li>
     <li>Socket client (JSON communication)</li>
-    <li>Serial comunication with Arduino</li>
+    <li>Serial communication with Arduino</li>
 </ul>
 <h3>DataCollector</h3>
 <ul>
