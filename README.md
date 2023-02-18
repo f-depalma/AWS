@@ -20,12 +20,12 @@
     <li>Connect the - pin to GND</li>
     <li>Connect the out pin to the digital input 2</li>
     <li>Send message of this structure: &lt;name&gt;:&lt;value&gt;:&lt;unit&gt;\n</li>
-    <li>Remember to install the library in Arduino IDE</li>
+    <li>Remember to install the libraries in Arduino IDE</li>
 </ul>
 
 <h3>RabbitMQ</h3>
-<div margin-left="15px">
-    execute the following step:
+<div>
+    Execute the following step:
     <ul>
         <li>Install docker</li>
         <li>In terminal execute:

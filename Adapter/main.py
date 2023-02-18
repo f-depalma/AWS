@@ -1,8 +1,11 @@
 from serial_communication.serialCommunication import SerialCommunication
 from rabbitmq.publisherManager import PublisherManager
 from pubsub import pub
+from notify_queue import notifyQueue
+from config import EXCHANGE
 
-publisherManager = PublisherManager()
+
+publisherManager = PublisherManager(EXCHANGE)
 
 
 def start_app():
@@ -12,6 +15,7 @@ def start_app():
 
 def publish(data):
     publisherManager.publish(data)
+    notifyQueue.send(data.name, EXCHANGE)
 
 
 if __name__ == "__main__":

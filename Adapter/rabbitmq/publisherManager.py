@@ -1,11 +1,11 @@
-from .publisher import Publisher
 import pika
+from .publisher import Publisher
 
 
 class PublisherManager:
-    EXCHANGE = 'ws1'
 
-    def __init__(self):
+    def __init__(self, exchange):
+        self.EXCHANGE = exchange
         self.publishers = {}
         connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 
@@ -19,7 +19,7 @@ class PublisherManager:
     def publish(self, data):
         if self.publishers.get(data.name) is None:
             queue = self.channel.queue_declare(
-                queue=data.name,
+                queue=self.EXCHANGE + "." + data.name,
                 arguments={'x-message-ttl': 60000}
             )
             self.channel.queue_bind(

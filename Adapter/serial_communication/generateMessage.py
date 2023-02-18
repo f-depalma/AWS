@@ -2,7 +2,6 @@ from threading import Thread
 from .data import Data
 from pubsub import pub
 
-
 class GenerateMessage(Thread):
     def __init__(self, queue):
         Thread.__init__(self)
