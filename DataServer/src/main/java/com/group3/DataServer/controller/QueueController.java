@@ -1,5 +1,7 @@
-package com.group3.DataServer;
+package com.group3.DataServer.controller;
 
+import com.group3.DataServer.service.ListenerService;
+import com.group3.DataServer.model.QueueData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -13,15 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class QueueController {
 
     @Autowired
-    RabbitMQConfiguration rabbitMQConfiguration;
+    ListenerService listenerService;
 
-    @Autowired
-    ConsumerService consumerService;
 
     @PostMapping
     public ResponseEntity saveUser(@Validated @RequestBody QueueData queue) {
-        //rabbitMQConfiguration.addQueue(queue.getName());
-        consumerService.addConsumer(queue.getName());
+        System.out.println("New queue added");
+        listenerService.addListener(queue.getName());
         return ResponseEntity.ok().build();
     }
 }

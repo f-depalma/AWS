@@ -1,9 +1,9 @@
 from serial_communication.serialCommunication import SerialCommunication
-from rabbitmq.publisherManager import PublisherManager
+from publisherManager import PublisherManager
 from pubsub import pub
-from notify_queue import notifyQueue
+from notifyQueue import notify
 from config import EXCHANGE
-
+from threading import Thread
 
 publisherManager = PublisherManager(EXCHANGE)
 
@@ -14,15 +14,11 @@ def start_app():
 
 
 def publish(data):
-    publisherManager.publish(data)
-    notifyQueue.send(data.name, EXCHANGE)
+    #thread = Thread(target=publisherManager.publish, args=(data, notify))
+    #thread.start()
+
+    publisherManager.publish(data, notify)
 
 
 if __name__ == "__main__":
     start_app()
-
-    # starting the client
-    # s = socket.socket()
-    # s.connect(('127.0.0.1', 12345))
-
-    # start to read from arduino and send message to the server
