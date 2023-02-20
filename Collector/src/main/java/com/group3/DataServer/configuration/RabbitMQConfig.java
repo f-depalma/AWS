@@ -6,9 +6,12 @@ import org.springframework.amqp.rabbit.config.DirectRabbitListenerContainerFacto
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.*;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 
 @EnableRabbit
@@ -16,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig implements RabbitListenerConfigurer {
 
     @Value("${spring.rabbitmq.username}")
-    String username;
+    private String username;
 
     @Value("${spring.rabbitmq.password}")
     private String password;
@@ -43,7 +46,7 @@ public class RabbitMQConfig implements RabbitListenerConfigurer {
     public DirectRabbitListenerContainerFactory rabbitListenerContainerFactory() {
         DirectRabbitListenerContainerFactory factory = new DirectRabbitListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory());
-        // factory.setMessageConverter(new Jackson2JsonMessageConverter());
+        factory.setMessageConverter(new Jackson2JsonMessageConverter());
         return factory;
     }
 
@@ -57,13 +60,5 @@ public class RabbitMQConfig implements RabbitListenerConfigurer {
     public void configureRabbitListeners(RabbitListenerEndpointRegistrar registrar) {
         registrar.setEndpointRegistry(listenerEndpointRegistry());
     }
-
-    /*@Bean
-    public ApplicationRunner runner(ConnectionFactory connectionFactory, Declarables queues) {
-        return args -> {
-
-            queues.getDeclarables().forEach(dec -> container(connectionFactory, (Queue) dec).start());
-        };
-    }*/
 
 }

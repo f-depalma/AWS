@@ -8,7 +8,7 @@
     <li>Is a producer on RabbitMQ</li>
     <li>Serial communication with Arduino</li>
 </ul>
-<h3>DataServer</h3>
+<h3>Collector</h3>
 <ul>
     <li>Java</li>
     <li>Is a consumer on RabitMQ</li>
@@ -23,15 +23,13 @@
     <li>Remember to install the libraries in Arduino IDE</li>
 </ul>
 
-<h3>RabbitMQ</h3>
+<h3>RabbitMQ and MongoDB</h3>
 <div>
     Execute the following step:
     <ul>
         <li>Install docker</li>
-        <li>In terminal execute:
-            <pre>docker pull rabbitmq</pre>
-            <pre>docker run --rm -it --hostname my-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management</pre>
-        </li>
+        <li>Open the file docker-compose.yaml in IntelliJ</li>
+        <li>Click the double green arrow next to the row numbers</li>
     </ul>   
 </div>
 
