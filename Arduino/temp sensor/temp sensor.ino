@@ -36,15 +36,14 @@ void loop() {
   }
 
   // Compute heat index
-  // Must send in temp in Fahrenheit!
   float hi = dht.computeHeatIndex(t, h, false);
 
-  String humidity = "Humidity";
+  String humidity = "humidity";
   String sep = ":";
   String perc = "%";
-  String temperature = "Temperature";
+  String temperature = "temperature";
   String celsius = "*C";
-  String feel_like = "Feel like";
+  String feel_like = "feel like";
 
   Serial.println(humidity + sep + h + sep + perc);
   Serial.println(temperature + sep + t + sep + celsius);

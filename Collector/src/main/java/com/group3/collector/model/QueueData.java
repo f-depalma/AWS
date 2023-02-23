@@ -1,4 +1,4 @@
-package com.group3.DataServer.model;
+package com.group3.collector.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

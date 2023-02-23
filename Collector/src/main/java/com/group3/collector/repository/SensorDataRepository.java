@@ -1,11 +1,8 @@
-package com.group3.DataServer.repository;
+package com.group3.collector.repository;
 
-import com.group3.DataServer.model.SensorData;
-import com.mongodb.client.MongoClients;
+import com.group3.collector.model.SensorData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 import org.springframework.stereotype.Repository;
 
 @Repository

@@ -9,12 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.group3</groupId>
-	<artifactId>DataServer</artifactId>
+	<artifactId>Collector</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>DataServer</name>
+	<name>Collector</name>
 	<description>Advanced Weather Station</description>
 	<properties>
 		<java.version>17</java.version>
+		<jar.finalName>collector</jar.finalName>
 	</properties>
 	<dependencies>
 		<dependency>

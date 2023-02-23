@@ -1,7 +1,7 @@
-package com.group3.DataServer.service;
+package com.group3.collector.service;
 
-import com.group3.DataServer.model.SensorData;
-import com.group3.DataServer.repository.SensorDataRepository;
+import com.group3.collector.model.SensorData;
+import com.group3.collector.repository.SensorDataRepository;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +14,9 @@ public class RabbitMQListener {
 
     @RabbitListener(id="listener")
     public void receiveMessage(SensorData data) {
-
         System.out.println("Consuming Message - " + data);
         sensorDataRepository.insert(data);
-
     }
+
 
 }

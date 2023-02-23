@@ -1,4 +1,4 @@
-package com.group3.DataServer.model;
+package com.group3.collector.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -10,7 +10,7 @@ public class SensorData {
     private String id;
     private String date_time;
     private String name;
-    private float value;
+    private Object value;
     private String unit;
 
 }
