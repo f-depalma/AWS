@@ -1,0 +1,33 @@
+is_global = true
+build_property.TargetFramework = net6
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = WeatherStationApp
+build_property.RootNamespace = WeatherStationApp
+build_property.ProjectDir = C:\Users\walid\OneDrive - ViaUC\Project\AWS (Advanced Weather Station)\Client\WeatherStationApp\
+build_property.RazorLangVersion = 3.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\walid\OneDrive - ViaUC\Project\AWS (Advanced Weather Station)\Client\WeatherStationApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/walid/OneDrive - ViaUC/Project/AWS (Advanced Weather Station)/Client/WeatherStationApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/walid/OneDrive - ViaUC/Project/AWS (Advanced Weather Station)/Client/WeatherStationApp/Layouts/BasicLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xCYXNpY0xheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/walid/OneDrive - ViaUC/Project/AWS (Advanced Weather Station)/Client/WeatherStationApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/walid/OneDrive - ViaUC/Project/AWS (Advanced Weather Station)/Client/WeatherStationApp/Pages/Welcome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-90uqvofn15

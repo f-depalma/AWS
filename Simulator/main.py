@@ -80,4 +80,4 @@ if __name__ == "__main__":
     while True:
         thread = Thread(target=sim.publish)
         thread.start()
-        time.sleep(0.1)
+        time.sleep(1)
